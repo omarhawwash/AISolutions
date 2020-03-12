@@ -48,7 +48,13 @@ def reproduce(mother, father):
     Return the child individual
     '''
 
-    #return child
+    child = []
+    for x in range (0, 3):
+        if mother[x] == 1 or father[x] == 1:
+            child.append(1)
+        else:
+            child.append(0)
+    return tuple(child)
 
 
 def mutate(individual):
@@ -56,8 +62,16 @@ def mutate(individual):
     Mutate an individual by randomly assigning one of its bits
     Return the mutated individual
     '''
+    mutated = False # Boolean that's changed when we've mutated
+    mutation = () # Make mutation tuple = 0
+    for x in range (len(individual)):  # For random variable in X as long as the individual's bits (so 3)
+        if random.randint(0,1) == 1 and mutated == False:  # Make a random int, and if it's equal to 1, and the child hasn't been mutated yet
+            mutation = mutation + (1,)  # mutate child by adding 1 to it's random bit
+            mutated = True  # Set mutated to be true, so we don't mutate this child again
+        else:
+            mutation = mutation + (individual[x],)  # Otherwise, set the mutation tuple to be itself + the bit of the individual at the given bit (x)
 
-    #return mutation
+    return mutation  # Self-explanatoey
 
 
 def random_selection(population, fitness_fn):
@@ -72,10 +86,24 @@ def random_selection(population, fitness_fn):
     # Python sets are randomly ordered. Since we traverse the set twice, we
     # want to do it in the same order. So let's convert it temporarily to a
     # list.
+
     ordered_population = list(population)
+    selected = []  # make empty array with the selected child in population
+    total_fitness = 0
+    to_selection = []
 
+    for x in ordered_population:
+        current_fitness = fitness_fn(x)  # set current fitness to be equal to the value x in
+        # our ordered population array to the input var fitness_fn
+        total_fitness = total_fitness + current_fitness  # total fitness is equal to whatever it was
+        # PLUS the current fitness
 
-    #return selected
+        for i in range (current_fitness):  # for every number in current fitness
+            to_selection.append(x)  # add it to the selection array
+
+    selected = [to_selection[int(random.uniform(0, total_fitness))],to_selection[int(random.uniform(0, total_fitness))]]
+    print("Selected mom & dad", selected)
+    return selected
 
 
 def fitness_function(individual):
@@ -90,8 +118,16 @@ def fitness_function(individual):
 
     enumerate(reversed((1, 1, 0))) -> [(0, 0), (1, 1), (2, 1)]
     '''
+    fitness = 0
 
-    #return fitness
+    if individual[0] == 1:
+        fitness = fitness + 4
+    if individual[1] == 1:
+        fitness = fitness + 2
+    if individual[2] == 1:
+        fitness = fitness + 1
+
+    return fitness
 
 
 def get_fittest_individual(iterable, func):
@@ -127,4 +163,4 @@ def main():
 
 if __name__ == '__main__':
     pass
-    #main()
+    main()
