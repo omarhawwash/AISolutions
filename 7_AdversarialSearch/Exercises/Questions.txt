@@ -1,0 +1,27 @@
+* What is the branching factor at depth 0? At depth 1?
+
+Branching factor at depth 0 is 9.
+At depth 1, the branching factor becomes 8. It decreases once per ply.
+
+
+* What is the maximal depth?
+
+The maximal depth is 9, if the game can be won by the first turn. 8 if it can be won by the second turn. And so on.
+
+* Will a MIN move attempt to minimize or maximize the utility?
+
+It'll attempt to minimize the utility.
+
+* Are states after a terminal state explored?
+
+Yes.
+
+* Are all possible states explored to a terminal state?
+
+All possible states from said move will be explored to the terminal state, yes. This is done to decide what move should be made.
+
+* Is this a depth-first or a breadth-first search? How do you know? (see Python code)
+
+It's based on the breadth-first search algorithm, as we've got the successors_of method, which finds the successors for each move, kind of like the breadth-first algorithm works with nodes, and expands each node to find the available moves, rather than just going from the root and straying as far away from it as possible.
+
+* Run the MinMax tic-tac-toe program (you will play O)

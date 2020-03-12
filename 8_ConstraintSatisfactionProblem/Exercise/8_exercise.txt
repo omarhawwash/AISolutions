@@ -1,0 +1,29 @@
+Lecture 8 Exercises
+
+1. What is returned by create_australia_csp()?
+Variables, Domains, Values, Neighbours.
+
+2. What is returned by backtracking_search()?
+This method is returning the recursive_backtracking method.
+The recursive_backtracking returns the assignment if it's complete.
+
+3. What is the purpose of assignment variable?
+Assignment are used to (re)bind variables to values and to modify its attributes.
+
+4. What is the purpose of variable variable?
+Contains all the domain names.
+
+5. What is the purpose of the following statement?
+for value in self.order_domain_values(variable, assignment)
+It takes all the domain names with their values and put em in alphabetic order.
+
+6. What would the following do?
+if self.is_consistent('Q', 'Red', {'NT': 'Blue', 'NSW': 'green'}):
+assignment[variable] = value
+A check whether the following code checks out, then Red gets bound to Q as its value.
+
+7. What would then assignment be?
+The current binding of Q, and all of its values, and attributes.
+
+8. What is the effect of del assignment[variable]?
+It deletes the current assignment, when called.

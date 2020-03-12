@@ -1,0 +1,21 @@
+TABLE-DRIVEN-AGENT
+
+    1. Done.
+
+    2. Done. Before we adding the code: print (TABLE_DRIVEN_AGENT((B, 'Clean'))) and running the program, it would print:
+            Action	Percepts
+            Right 	 [('A', 'Clean')]
+            Suck 	 [('A', 'Clean'), ('A', 'Dirty')]
+       But after adding the code, it will print the following:
+            Action	Percepts
+            Right 	 [('A', 'Clean')]
+            Suck 	 [('A', 'Clean'), ('A', 'Dirty')]
+            Left 	 [('A', 'Clean'), ('A', 'Dirty'), ('B', 'Clean')]
+        This is simply because we gave the perception a location B where we said it should clean when we run the program and since
+        the position B is added, there are now two options for the agent to do, to go right and left, since we are switching to left after B is clean.
+
+   3. ??
+
+   4. ??
+
+

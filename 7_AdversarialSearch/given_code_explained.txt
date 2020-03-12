@@ -1,0 +1,93 @@
+def max_value(state)
+	if the game is over
+	see who won it 
+
+for (a,s) in successors_of
+set v to -infinity (which was defined earlier)
+
+for (a,s) in successors_of
+set v to min(v, max_value(s))
+
+then 
+return v
+
+uses action and state
+
+
+def is_terminal state
+ends the game if the board is full or if there's a winner
+
+def utility_of state
+assigns points to either x or o depending on who won
+
+def successors_of state
+we start by making an empty list called successors
+it'll contain the possible moves onwards
+set open (spots) to 0
+
+for the amounts of moves in the range 9 (as tic-tac-toe has 9 spots)
+if state move is movable, set the amount of open spots to 1
+
+then
+decide whose turn it is 
+if open % 2 == 1, it's X' turn
+otherwise, it's O's turn.
+
+now, we create a successor for each available move
+for a move in the range 9
+if state move is an accessible tile (0, 1, 2, 3 etc.)
+copy the list
+then
+place the player
+then add move and its successor to the list of successors
+
+finally, return successors
+
+def is_full_board state
+iterates through range(9)
+if any number until 9 isnt x or o
+return false (there are still some to go)
+otherwise, return true: the board is full. All are either x or o.
+
+def winner_of state
+Checks who won. If X won, it returns X. If O won, it returns O. If the game hasn't finished yet or it's a draw, it returns None.
+
+Checks horizontally first
+checks 0, 3 and 6
+	if state[c+0] == state[c+1] and c+0 and c+2 are equal;
+return state[c+0]
+
+Then checks vertically
+checks 0, 1 and 2
+if c + 0 = c + 3 AND c + 0 = c + 6
+return state [c+0]
+
+Then checks diagonally
+if 0 = 4 and 0 = 8 (states obvs)
+return state 4 
+
+Checks the other way (diagonally)
+if 2 = 4 and 2 = 6 
+return state 4
+
+else
+return none
+
+def_display state
+prints out a line of 5 dashes for visual purposes
+for c in 0, 3, 6 (assumably in the array)
+print state 
+c+0, c+1 and c+2
+
+def main 
+board consists of an array with the numbers 0 thru 8
+while the game isn't finished (using the board)
+'X' chooses its next move (X being the AI)
+
+if the game is still not over
+display the board
+then let the user (O) input their move, and mark their move as O
+then display the board
+
+def argmax
+returns max

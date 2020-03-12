@@ -1,0 +1,10 @@
+Exercise 1
+
+1. LIFO queue, successor nodes are put at front
+2. ??
+3. It is a breadth-first search. The effects are the following:
+    - it is complete
+    - it costs 1 per step
+    - The time is O(b^d), where d is the depth of the optimal solution.
+    - The space is O(b^d).
+4. ??

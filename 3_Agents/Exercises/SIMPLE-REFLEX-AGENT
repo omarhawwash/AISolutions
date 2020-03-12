@@ -1,0 +1,11 @@
+SIMPLE-REFLEX-AGENT
+
+    1. Done.
+
+    2. Done.
+
+    3. No bogus actions should not corrupt the environment, since it will be against the rule of the Agent,
+       as it must follow some right rules or principles. If we add bogus actions instead and the Agent's location is A and
+       wants to go Left instead of Right (in order to actually reach location B),
+       it will then continuously get back to location A every time., just like this:
+
